@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition Result</title>
+</head>
+<body>
+    <h1>Face Recognition Result</h1>
+    <h2>Uploaded Image</h2>
+    <img src="{{ url_for('static', filename='uploads/' + uploaded_image) }}" alt="Uploaded Image">
+    <h2>Result Image</h2>
+    <img src="{{ url_for('static', filename='uploads/' + result_image) }}" alt="Result Image">
+    <h3>Detected Faces</h3>
+    <ul>
+        {% for name in names %}
+        <li>{{ name }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Go Back</a>
+</body>
+</html>
